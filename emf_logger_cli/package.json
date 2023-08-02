@@ -1,0 +1,42 @@
+{
+  "name": "emf_logger_cli",
+  "version": "0.0.1",
+  "description": "A lightweight command line interface (CLI) for logging EMF data to EMF format via a serial port and for decoding existing files.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --config .eslintrc.json --ext .js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdr-chakotay/emf_logger.git"
+  },
+  "keywords": [
+    "EMF",
+    "emfduino",
+    "emf-logger"
+  ],
+  "author": "Florian Künzig",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cdr-chakotay/emf_logger/issues"
+  },
+  "homepage": "https://github.com/cdr-chakotay/emf_logger#readme",
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.33.2",
+    "glob": "^9.3.4",
+    "serialport": "^10.5.0",
+    "simple-statistics": "^7.8.3",
+    "yargs": "^17.7.1"
+  },
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.7",
+    "remove": "^0.1.5"
+  }
+}
