@@ -41,7 +41,7 @@ npm install
 
 5. Copy the emf_device folder to the Arduino library folder. The location of the Arduino library folder can be found in the Arduino IDE under `File -> Preferences -> Sketchbook location`.
 
-### Data Base Setup
+### DataBase Setup
 
 Please set up a InfluxDB v2 instance and create a bucket for the data.
 Also configure a retention policy to not delete data, to be able to query it later.
@@ -54,7 +54,7 @@ The software is configurable and usable via command line interface. Despite ther
 ### Configuration
 
 The configuration of the software components, espically the InfluxDatabaseConnection is done via environment variables:
-The following talbe lists the environment variables that are used by the software components and are necessary to be set.
+The following table lists the environment variables that are used by the software components and are necessary to be set.
 
 <!-- prettier-ignore -->
 | Variable name       |     Used by       | Description  |
@@ -68,6 +68,27 @@ The following talbe lists the environment variables that are used by the softwar
 | INFLUXDB_URL        | all               | URL under which the InfluxDB is reachable in the schema: https://<URL                   | IP>:PORT |
 | MICROMAX_URL        | micromax_scraper  | URL to the web interface of the micromax_fgps device in the format http://<URL          | IP>:PORT |
 
+## Usage
+
+For using the main functionality of the software, the following steps and materials are necessary:
+
+### Using the EMFduino as measurement device
+
+-   A precise time source (e.g. GPS, NTP, RTC) preconfigured is either a DS3231 or a Ublox GPS module and connect its I2C-Bus to the Arduino's Pins A4 and A5
+-   Get a 1 Hz signal from the RTC to Pin D3 of the Arduino
+-   Connect a 3 - 5 V transformed and full bridge rectified mains frequency signal to the Arduino Pin D2
+-   Connect the Arduino to the computer via USB
+-   Make sure the environment variables are set correctly
+-   Start the emf_logger_cli and hand it over the necessary port number the Arduino is connected to (e.g. COM3 on Windows or /dev/ttyACM0 on Linux)
+
+### Using another Measurement Device
+
+-   Make sure the environment variables are set correctly
+-   Start the emf_logger_cli and hand it over the necessary port number the Arduino is connected to (e.g. COM3 on Windows or /dev/ttyACM0 on Linux)
+-   The measurement device has to send the measurement data as binary encoded message with the following content each second:
+    -   `Uint32LE` - POSIX timestamp in seconds
+    -   `Float32LE` - Frequency in Hz
+
 ## Declaration of third party software usage
 
 This software uses third party software as part of its functionality. The following table lists the used libraries, their licenses and the parts of the software that use them. It only shows libraries, which are not a part of the standard library and also not the language/framework or part of the listed libraries itself.
@@ -78,8 +99,8 @@ This software uses third party software as part of its functionality. The follow
 | [influxdb-client-js](https://github.com/influxdata/influxdb-client-js)                       | MIT          | emf_logger_cli                      | node.js            |
 | [influxdb-client-python](https://github.com/influxdata/influxdb-client-python)               | MIT          | gridradar_scraper, micromax_scraper | python             |
 | [requests](https://github.com/psf/requests)                                                  | Apache 2.0   | gridradar_scraper, micromax_scraper | python             |
-| [serialport](https://github.com/serialport/node-serialport)                                  | MIT          | emf_logger_cli                      | node.js            |
-| [Simple Statistics](https://github.com/simple-statistics/simple-statistics)                  | ISC          | emf_logger_cli                      | node.js            |
+| [node-serialport](https://github.com/serialport/node-serialport)                             | MIT          | emf_logger_cli                      | node.js            |
+| [simple-statistics](https://github.com/simple-statistics/simple-statistics)                  | ISC          | emf_logger_cli                      | node.js            |
 | [SparkFun_Ublox_Arduino_Library](https://github.com/sparkfun/SparkFun_Ublox_Arduino_Library) | CC BY-SA 4.0 | rtc_methods                         | C++                |
 | [yargs](https://github.com/yargs/yargs)                                                      | MIT          | emf_logger_cli                      | node.js            |
 
