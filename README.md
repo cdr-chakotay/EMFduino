@@ -79,7 +79,7 @@ This software uses third party software as part of its functionality. The follow
 | [influxdb-client-python](https://github.com/influxdata/influxdb-client-python)               | MIT          | gridradar_scraper, micromax_scraper | python             |
 | [requests](https://github.com/psf/requests)                                                  | Apache 2.0   | gridradar_scraper, micromax_scraper | python             |
 | [serialport](https://github.com/serialport/node-serialport)                                  | MIT          | emf_logger_cli                      | node.js            |
-| [Simple Statistics](https://github.com/simple-statistics/simple-statistics)                  | ISC          | emf_logger_cli                      | node.js            |
+| [simpl-statistics](https://github.com/simple-statistics/simple-statistics)                  | ISC          | emf_logger_cli                      | node.js            |
 | [SparkFun_Ublox_Arduino_Library](https://github.com/sparkfun/SparkFun_Ublox_Arduino_Library) | CC BY-SA 4.0 | rtc_methods                         | C++                |
 | [yargs](https://github.com/yargs/yargs)                                                      | MIT          | emf_logger_cli                      | node.js            |
 
