@@ -1,6 +1,6 @@
 # EMFDuino
 
-EMFDuino is a project about measuring Eletric Mains Frequency (EMF) with low-cost Arduino hardware as measurement device and a Raspberry Pi Database Server and measurement interpretation computer (Also other computers are possible).
+EMFDuino is a project about measuring Electric Mains Frequency (EMF) with low-cost Arduino hardware as measurement device and a Raspberry Pi Database Server and measurement interpretation computer (Also other computers are possible).
 This repository contains the software for the measurement device and the middleware to connect the measurement device to the database server.
 Also, the helper tools for querying and saving output from the Gridradar Database and saving data of a micromax-fgps PMU are included.
 
@@ -43,7 +43,7 @@ npm install
 
 ### DataBase Setup
 
-Please set up a InfluxDB v2 instance and create a bucket for the data.
+Please set up a [InfluxDB](https://www.influxdata.com/products/influxdb/) v2 instance and create a bucket for the data.
 Also configure a retention policy to not delete data, to be able to query it later.
 The generation of an API token is also necessary to be able to write data to the database.
 
@@ -53,7 +53,7 @@ The software is configurable and usable via command line interface. Despite ther
 
 ### Configuration
 
-The configuration of the software components, espically the InfluxDatabaseConnection is done via environment variables:
+The configuration of the software components, especially the InfluxDatabaseConnection is done via environment variables:
 The following table lists the environment variables that are used by the software components and are necessary to be set.
 
 <!-- prettier-ignore -->
@@ -74,12 +74,13 @@ For using the main functionality of the software, the following steps and materi
 
 ### Using the EMFduino as measurement device
 
--   A precise time source (e.g. GPS, NTP, RTC) preconfigured is either a DS3231 or a Ublox GPS module and connect its I2C-Bus to the Arduino's Pins A4 and A5
+-   A precise time source (e.g. GPS, NTP, RTC) pre-configured is either a DS3231 or an Ublox GPS module and connect its I2C-Bus to the Arduino's Pins A4 and A5
 -   Get a 1 Hz signal from the RTC to Pin D3 of the Arduino
 -   Connect a 3 - 5 V transformed and full bridge rectified mains frequency signal to the Arduino Pin D2
 -   Connect the Arduino to the computer via USB
 -   Make sure the environment variables are set correctly
 -   Start the emf_logger_cli and hand it over the necessary port number the Arduino is connected to (e.g. COM3 on Windows or /dev/ttyACM0 on Linux)
+-   The following circuit is recommended for setting up an EMFduino:
 
 ### Using another Measurement Device
 
