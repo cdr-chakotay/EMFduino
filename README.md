@@ -56,7 +56,9 @@ The software is configurable and usable via command line interface. Despite ther
 The configuration of the software components, especially the InfluxDatabaseConnection is done via environment variables:
 The following table lists the environment variables that are used by the software components and are necessary to be set.
 
+
 <!-- prettier-ignore -->
+**Tabel 1:** *Environment variables for configuration and operation of the measurement software*
 | Variable name       |     Used by       | Description  |
 | ------------------- | ----------------- | ------------ |
 | GRIDRADAR_TOKEN     | gridradar_scraper | Authentication token for the Gridradar API                                              |
@@ -77,11 +79,15 @@ For using the main functionality of the software, the following steps and materi
 -   A precise time source (e.g. GPS, NTP, RTC) pre-configured is either a DS3231 or an Ublox GPS module and connect its I2C-Bus to the Arduino's Pins A4 and A5
 -   Get a 1 Hz signal from the RTC to Pin D3 of the Arduino
 -   Connect a 3 - 5 V transformed and full bridge rectified mains frequency signal to the Arduino Pin D2
--   Connect the Arduino to the computer via USB
--   Make sure the environment variables are set correctly
--   Start the emf_logger_cli and hand it over the necessary port number the Arduino is connected to (e.g. COM3 on Windows or /dev/ttyACM0 on Linux)
 -   The following circuit is recommended for setting up an EMFduino:
-
+    | ![EMFduino_schematic](https://github.com/cdr-chakotay/EMFduino/assets/60937022/588f4684-53fb-4d05-8b3b-550e5e46ef51) |
+    |:--:| 
+    | **Figure 1:** *Schematic circuit diagram of an EMFduino measuring device*  |
+-  Ensure a measurement environment free of voltage peaks at room temperature
+-   Connect the Arduino to the computer via USB
+-   Make sure the environment variables are set correctly (see Tab. 1)
+-   Start the emf_logger_cli and hand it over the necessary port number the Arduino is connected to (e.g. COM3 on Windows or /dev/ttyACM0 on Linux)
+  
 ### Using another Measurement Device
 
 -   Make sure the environment variables are set correctly
@@ -94,6 +100,7 @@ For using the main functionality of the software, the following steps and materi
 
 This software uses third party software as part of its functionality. The following table lists the used libraries, their licenses and the parts of the software that use them. It only shows libraries, which are not a part of the standard library and also not the language/framework or part of the listed libraries itself.
 
+**Tabel 2:** *Overview of used 3rd party software*
 | Library                                                                                      | License      | Usage                               | Language/Framework |
 | -------------------------------------------------------------------------------------------- | ------------ | ----------------------------------- | ------------------ |
 | [glob](https://github.com/isaacs/node-glob)                                                  | ISC          | emf_logger_cli                      | node.js            |
