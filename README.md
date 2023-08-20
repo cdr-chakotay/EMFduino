@@ -1,6 +1,6 @@
-# EMFDuino
+# EMFduino
 
-EMFDuino is a project about measuring Electric Mains Frequency (EMF) with low-cost Arduino hardware as measurement device and a Raspberry Pi Database Server and measurement interpretation computer (Also other computers are possible).
+EMFduino is a project about measuring Electric Mains Frequency (EMF) with low-cost Arduino hardware as measurement device and a Raspberry Pi Database Server and measurement interpretation computer (Also other computers are possible).
 This repository contains the software for the measurement device and the middleware to connect the measurement device to the database server.
 Also, the helper tools for querying and saving output from the Gridradar Database and saving data of a micromax-fgps PMU are included.
 
