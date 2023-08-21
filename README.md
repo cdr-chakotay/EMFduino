@@ -80,7 +80,7 @@ For using the main functionality of the software, the following steps and materi
 -   Get a 1 Hz signal from the RTC to Pin D3 of the Arduino
 -   Connect a 3 - 5 V transformed and full bridge rectified mains frequency signal to the Arduino Pin D2
 -   The following circuit is recommended for setting up an EMFduino:
-    | ![EMFduino_schematic](https://github.com/cdr-chakotay/EMFduino/assets/60937022/588f4684-53fb-4d05-8b3b-550e5e46ef51) |
+    | ![EMFduino_schematic](https://github.com/cdr-chakotay/EMFduino/assets/60937022/5cf2b62b-9f43-4fbb-bb54-e75205f63704) |
     |:--:| 
     | **Figure 1:** *Schematic circuit diagram of an EMFduino measuring device*  |
 -  Ensure a measurement environment free of voltage peaks at room temperature
